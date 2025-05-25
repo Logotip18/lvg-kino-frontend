@@ -10,7 +10,7 @@ function Home() {
     const [sessions, setSessions] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/sessions')
+        fetch('https://lvg-kino-backend.onrender.com/api/sessions')
             .then(response => response.json())
             .then(data => {
                 const sortedSessions = data.sort((a, b) => new Date(a.time) - new Date(b.time));

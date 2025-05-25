@@ -11,7 +11,7 @@ function SeatSelection() {
     const [bookingResult, setBookingResult] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/sessions')
+        fetch('https://lvg-kino-backend.onrender.com/api/sessions')
             .then(response => response.json())
             .then(data => {
                 const sortedSessions = data.sort((a, b) => new Date(a.time) - new Date(b.time));
@@ -27,7 +27,7 @@ function SeatSelection() {
     useEffect(() => {
         if (selectedSessionId) {
             setBookingResult(null);
-            fetch(`http://localhost:3000/api/hall/${selectedSessionId}`)
+            fetch(`https://lvg-kino-backend.onrender.com/api/hall/${selectedSessionId}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log('Received hall data:', JSON.stringify(data, null, 2));
@@ -53,7 +53,7 @@ function SeatSelection() {
             people,
         };
         console.log('Sending booking request:', bookingData);
-        fetch(`http://localhost:3000/api/book`, {
+        fetch(`https://lvg-kino-backend.onrender.com/api/book`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookingData),

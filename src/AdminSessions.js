@@ -17,7 +17,7 @@ function AdminSessions() {
     const [hall, setHall] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/sessions')
+        fetch('https://lvg-kino-backend.onrender.com/api/sessions')
             .then(response => response.json())
             .then(data => {
                 const sortedSessions = data.sort((a, b) => new Date(a.time) - new Date(b.time));
@@ -28,7 +28,7 @@ function AdminSessions() {
 
     useEffect(() => {
         if (selectedSessionId) {
-            fetch(`http://localhost:3000/api/hall/${selectedSessionId}`)
+            fetch(`https://lvg-kino-backend.onrender.com/api/hall/${selectedSessionId}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log('Admin hall data:', JSON.stringify(data, null, 2));
@@ -49,7 +49,7 @@ function AdminSessions() {
     };
 
     const handleAddSession = () => {
-        fetch('http://localhost:3000/api/sessions', {
+        fetch('https://lvg-kino-backend.onrender.com/api/sessions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newSession),
@@ -64,7 +64,7 @@ function AdminSessions() {
     };
 
     const handleUpdateSession = () => {
-        fetch(`http://localhost:3000/api/sessions/${updateSession.id}`, {
+        fetch(`https://lvg-kino-backend.onrender.com/api/sessions/${updateSession.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ movieTitle: updateSession.movieTitle, time: updateSession.time }),
@@ -78,7 +78,7 @@ function AdminSessions() {
     };
 
     const handleDeleteSession = () => {
-        fetch(`http://localhost:3000/api/sessions/${deleteSessionId}`, {
+        fetch(`https://lvg-kino-backend.onrender.com/api/sessions/${deleteSessionId}`, {
             method: 'DELETE',
         })
             .then(response => response.json())
