@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+.App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1B263B; /* Морской синий */
+    min-height: 100vh;
+    color: #333333; /* Тёмный текст */
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: #F4ECE6; /* Песочный */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    color: #212121 !important; /* Чёрный */
+    background-color: #CFD8DC; /* Серый фон */
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    color: #F4ECE6 !important; /* Светлый текст */
+    background-color: #90CAF9 !important; /* Голубой */
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.hall-container {
+    background-color: #E0E0E0; /* Светло-серый для зала */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.screen {
+    background-color: #B0BEC5;
+    color: #333333;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.seat-row {
+    margin-bottom: 20px;
+}
+
+.row-label {
+    font-size: 16px;
+    color: #E8B923;
+    width: 60px;
+    text-align: right;
+}
+
+.seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.seat:hover:not(.booked) {
+    transform: scale(1.1);
+}
+
+.seat-pouf {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4682B4; /* Бирюза */
+    color: #F4ECE6;
+    font-size: 14px;
+}
+
+.seat-double {
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #66BB6A; /* Зелёный */
+    color: #F4ECE6;
+    font-size: 14px;
+}
+
+.seat-quad {
+    width: 80px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #FFECB3; /* Песочный закат */
+    color: #333333;
+    font-size: 16px;
+}
+
+.seat.booked {
+    background-color: #8B0000 !important; /* Бордовый */
+    color: #F4ECE6 !important;
+    cursor: not-allowed;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend .seat {
+    margin: 0;
+}
+
+.legend-booked {
+    width: 20px;
+    height: 20px;
+    background-color: #8B0000;
+    border-radius: 4px;
+}
+
+.list-group-item {
+    background-color: #E0E0E0;
+    color: #333333;
+    border-color: #B0BEC5;
+    font-family: 'Playfair Display', serif;
+}
+
+.list-group-item-action:hover {
+    background-color: #90CAF9; /* Голубой */
+    color: #F4ECE6;
+}
+
+.list-group-item.active {
+    background-color: #90CAF9;
+    border-color: #90CAF9;
+}
+
+.alert-success {
+    background-color: #66BB6A; /* Зелёный */
+    color: #F4ECE6;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #E8B923;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.city-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #E8B923;
+    display: block;
+    margin-top: -5px;
+}
+
+.date-header {
+    color: #333333; /* Тёмно-серый для читаемости */
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+}
+
+.session-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+}
+
+.hall-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+}
+
+.booking-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #E8B923;
+    margin-bottom: 20px;
+}
+
+.session-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hall-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: #E8B923;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .seat-pouf {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .seat-double {
+        width: 50px;
+        height: 35px;
+        font-size: 12px;
+    }
+    .seat-quad {
+        width: 70px;
+        height: 50px;
+        font-size: 14px;
+    }
+    .row-label {
+        font-size: 14px;
+        width: 50px;
+    }
+    .list-group-item {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .session-title, .hall-title {
+        font-size: 16px;
+    }
+    .booking-header, .date-header {
+        font-size: 20px;
+    }
+    .col-md-4, .col-md-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .nav-link {
+        margin: 5px 0;
+        text-align: center;
+    }
+}
